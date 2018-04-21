@@ -1,0 +1,89 @@
+<html lang="en">
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Assignment 2</title>
+    </head>
+    <body> 
+
+            <script>
+/*Create a constructor function Airplane that takes following parameters
+    o model
+    o seating capacity
+    o maximum speed
+  and returns an object with below properties
+    o model
+    o seating capacity
+    o maximum speed
+    o print – method
+  • create 3 Airplane objects and call their print methods
+  • increase seating capacity for all airplane objects by 10
+  • delete maximum speed for all objects
+  • add new property average speed for all objects with value 600
+*/           
+             
+                function Airplane(model, seatingCapacity, maximumSpeed){
+                    
+                    this.model = model,
+                    this.seatingCapacity = seatingCapacity,
+                    this.maximumSpeed = maximumSpeed,
+                    this.print = function(){
+                        return "model: "+this.model+","+" seating capacity: "+this.seatingCapacity+","
+                        +" maximum speed: "+this.maximumSpeed;
+                    }             
+                }
+//• create 3 Airplane objects and call their print methods
+                console.log("create 3 Airplane objects and call their print methods"); 
+                console.log("------------------------------------------------------");               
+                //First Airplane A100 with 100 seats and speed 1000 
+                var Airplane1 = new Airplane('A100',100,'1000 km/h'); 
+                //Second Airplane B080 with 80 seats and speed 800
+                var Airplane2 = new Airplane('B080',80,'800 km/h');
+                //Third Airplane C200 with 200 seats and speed 2000
+                var Airplane3 = new Airplane('C200',200,'2000 km/h');
+                //Call the print method
+                callPrint();
+
+//• increase seating capacity for all airplane objects by 10
+                    console.log("increase seating capacity for all airplane objects by 10");
+                    console.log("--------------------------------------------------------");
+                    Airplane1.seatingCapacity+=10;
+                    Airplane2.seatingCapacity+=10;
+                    Airplane3.seatingCapacity+=10;
+                    callPrint();
+
+//• delete maximum speed for all objects
+                    console.log("delete maximum speed for all objects");
+                    console.log("------------------------------------");
+                    delete Airplane1.maximumSpeed;
+                    delete Airplane2.maximumSpeed;
+                    delete Airplane3.maximumSpeed;
+                    callPrint();
+
+//• Add new property average speed 600 for all objects
+                    console.log("add average speed 600 for all objects");
+                    console.log("-------------------------------------");
+                    Airplane1.averageSpeed= 600;
+                    Airplane2.averageSpeed= 600;
+                    Airplane3.averageSpeed= 600;
+                    console.log("Airplane 1 average speed: " + Airplane1.averageSpeed);
+                    console.log("Airplane 2 average speed: " + Airplane2.averageSpeed);
+                    console.log("Airplane 3 average speed: " + Airplane3.averageSpeed);
+
+//• Print the data for all Airplane objects
+                   function callPrint(){
+                    if(Airplane1){
+                        console.log(Airplane1.print());
+                    }
+                    if(Airplane2){
+                        console.log(Airplane2.print());
+                    }
+                    if(Airplane3){
+                        console.log(Airplane3.print());
+                    }    
+                }                  
+            </script>
+    </body>
+</html>
